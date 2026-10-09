@@ -77,7 +77,41 @@ input[type=checkbox]{width:auto;padding:0}
 
 .ownerBrandSplash{display:block;width:min(620px,82vw);height:auto;max-height:48vh;object-fit:contain;margin:0 auto 10px;animation:none!important;transform:none!important}
 @media(max-width:600px){.ownerBrandSplash{width:min(520px,90vw);max-height:42vh}}
-</style></head><body>
+
+/* FINAL FIX: fixed header must never cover module content or navigation items */
+:root{--app-header-height:64px}
+.hd{position:fixed!important;top:0!important;left:0!important;right:0!important;height:var(--app-header-height)!important;min-height:var(--app-header-height)!important;box-sizing:border-box!important;z-index:100!important;overflow:visible!important}
+#app{min-height:100dvh}
+main{position:relative!important;box-sizing:border-box!important;padding-top:calc(var(--app-header-height) + 18px)!important;padding-bottom:max(32px,env(safe-area-inset-bottom))!important;scroll-padding-top:calc(var(--app-header-height) + 16px)}
+main>*:first-child{scroll-margin-top:calc(var(--app-header-height) + 14px)}
+#view,#content,.view,.module-content{scroll-margin-top:calc(var(--app-header-height) + 14px)}
+aside{top:var(--app-header-height)!important;height:calc(100dvh - var(--app-header-height))!important;bottom:0!important;z-index:90!important;box-sizing:border-box!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important}
+#ov{top:var(--app-header-height)!important;z-index:80!important}
+#mod{z-index:200!important;padding-top:calc(var(--app-header-height) + 12px)!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important;box-sizing:border-box!important}
+#toast{z-index:300!important}
+body.nav-open{overflow-x:hidden}
+@media(min-width:900px){body.nav-open main{margin-left:240px!important;width:calc(100% - 240px)!important}body.nav-open .hd{left:0!important;width:100%!important}body.nav-open #ov{display:none!important}}
+@media(max-width:899.98px){main{margin-left:0!important;width:100%!important;padding-left:14px!important;padding-right:14px!important;padding-top:calc(var(--app-header-height) + 16px)!important}aside{width:min(86vw,310px)!important;max-width:310px!important;transform:translateX(-105%);overflow-x:hidden!important;overflow-y:auto!important}body.nav-open aside{transform:translateX(0)!important}#ov{display:none;position:fixed;inset:var(--app-header-height) 0 0!important}body.nav-open #ov{display:block!important}}
+@media(max-width:600px){.hd{padding:6px 10px!important;gap:6px!important}.hd .wb{min-width:0;max-width:60%;gap:6px!important}.hd .wb>div{max-width:38vw!important}.hd .brandIcon{width:42px!important;height:42px!important;flex-basis:42px!important}.hd .btn{white-space:nowrap}main{padding-bottom:calc(28px + env(safe-area-inset-bottom))!important}}
+
+</style>
+<style id="professional-auth-ui">
+/* Professional authentication screens only; the existing Welcome page stays unchanged. */
+#auth.authCard{width:min(100% - 28px,470px);max-width:470px;margin:clamp(20px,5vh,58px) auto;padding:clamp(22px,4vw,34px);border-radius:22px;box-shadow:0 18px 55px rgba(20,33,61,.12);border:1px solid var(--bd);background:var(--cd)}
+.authBrand{display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;margin:0 auto 24px;padding:0 0 20px;border-bottom:1px solid var(--bd)}
+.authBrand .brandWelcomeLogo{display:block;width:min(310px,78vw);height:auto;max-height:170px;object-fit:contain;object-position:center;background:transparent;border:0;box-shadow:none;margin:0 auto 5px}
+.authBrand .brandWelcomeName{font-size:clamp(25px,5vw,32px);font-weight:850;line-height:1.12;letter-spacing:-.5px;color:var(--tx)}
+.authBrand .brandWelcomePowered{font-size:clamp(13px,2.5vw,16px);font-weight:750;line-height:1.4;color:var(--pr);letter-spacing:.15px}
+.authIntro{text-align:center;margin-bottom:22px}.authIntro h2{font-size:24px;margin:0 0 5px}.authIntro p{margin:0}
+#auth.authCard>p{margin:0 0 15px}.authLabel{display:block;font-size:13px;font-weight:700;color:var(--tx);margin:0 0 6px}
+#auth.authCard input{min-height:46px;border-radius:10px;padding:11px 13px;transition:border-color .15s,box-shadow .15s}
+#auth.authCard input:focus{outline:none;border-color:var(--pr);box-shadow:0 0 0 3px rgba(23,105,224,.13)}
+.authSubmit{min-height:47px;border-radius:11px;font-weight:750;margin-top:3px;box-shadow:0 7px 16px rgba(23,105,224,.17)}
+.authSwitch{text-align:center;margin:20px 0 8px!important;font-size:14px}.authSwitch a,.authHome a{color:var(--pr);font-weight:750;text-decoration:none}.authHome{text-align:center;font-size:13px;margin:0!important}.authCard #am{margin:10px 0!important;overflow-wrap:anywhere}
+@media(max-width:600px){#auth.authCard{margin:18px auto 30px;padding:22px 18px;border-radius:18px}.authBrand{margin-bottom:20px;padding-bottom:17px}.authBrand .brandWelcomeLogo{width:min(290px,78vw);max-height:150px}.authIntro h2{font-size:22px}}
+</style>
+<style id="subscription-feature-safety">.pc ul li.numeric-only{display:none!important}</style>
+</head><body>
 <div id="splash"><img class="ownerBrandSplash" data-l alt="Solar Stack Powered by SRD Sons Technologies"><div id="sfe"></div><div class="ld"><i></i></div></div>
 <div id="welcome"></div>
 <div id="auth" class="card" style="display:none"></div>
@@ -143,11 +177,45 @@ w.innerHTML=`<div class="wn"><div class="wb">${logo()}<div>Solar <span>Stack</sp
 <div class="sec"><h2>Everything a solar EPC vendor needs</h2><div class="g3">${[['👥','Customer lifecycle','Enquiry → Survey → Quotation → Installation → Subsidy → Handover, step by step.'],['💰','Payments & balance','Record advance and instalments; see pending dues instantly.'],['🏢','Your business profile','Your own logo and details in your account.'],['📊','Live dashboard','Projects, kW sold, value, received and pending.'],['🔒','Private & secure','Every vendor sees only their own data.'],['📱','Works everywhere','Phone, tablet or desktop browser.']].map(f=>`<div class="card"><div style="font-size:28px">${f[0]}</div><b>${f[1]}</b><p class="mu">${f[2]}</p></div>`).join('')}</div></div>
 <div class="sec" style="background:var(--cd)"><h2>Subscription plans</h2>${err?`<p class="mu" style="text-align:center">Database setup pending.</p>`:''}<div class="g3">${plans.map(pc).join('')||'<p class="mu" style="text-align:center">Plans will appear here soon.</p>'}</div></div>
 <div class="sec" style="text-align:center"><div class="wb" style="justify-content:center">${logo()}<div>SRD Sons Technologies</div></div><p class="mu">Software, IT, Digital &amp; Technology Solutions<br>© ${new Date().getFullYear()} SRD Sons Technologies</p></div>`}
-const pc=(p,b)=>{const days=Math.max(0,Number(p.days)||0);let duration;if(days&&days%365===0){const n=days/365;duration=`${n} ${n===1?'Year':'Years'}`;}else if(days&&days%30===0){const n=days/30;duration=`${n} ${n===1?'Month':'Months'}`;}else{duration=`${days} ${days===1?'Day':'Days'}`;}const features=(p.features||'').split(/[,;|\n]+/).map(x=>x.trim()).filter(Boolean).filter(x=>!/^\d+(?:\.\d+)?$/.test(x));return `<div class="card pc"><h3>${esc(p.name)}</h3><b class="p">${inr(p.price)}</b><div class="mu">for ${duration} · ${p.max_customers>0?p.max_customers+' customers':'Unlimited customers'}</div><ul>${features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${b||''}</div>`};
+
+function sanitizePlanFeatureNodes(){document.querySelectorAll('.pc ul li').forEach(li=>{const t=(li.textContent||'').trim();if(/^\d+(?:\.\d+)?$/.test(t)){li.remove();}})}
+const pc=(p,b)=>{
+  const days=Math.max(0,Number(p.days)||0);
+  let duration;
+  if(days&&days%365===0){const n=days/365;duration=`${n} ${n===1?'Year':'Years'}`;}
+  else if(days&&days%30===0){const n=days/30;duration=`${n} ${n===1?'Month':'Months'}`;}
+  else{duration=`${days} ${days===1?'Day':'Days'}`;}
+
+  // Features are display-only. Never render a numeric-only value such as "1"
+  // as a separate feature; numeric values belong to the validity calculation.
+  const raw=String(p.features??'').trim();
+  let featureList=[];
+  const cleanFeature=(value)=>String(value??'')
+    .replace(/<[^>]*>/g,' ')
+    .replace(/[\[\]{}"']/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+  if(raw){
+    try{
+      const parsed=JSON.parse(raw);
+      featureList=Array.isArray(parsed)?parsed:(typeof parsed==='string'?[parsed]:[]);
+    }catch(e){
+      featureList=raw.split(/[,;|\n]+/);
+    }
+  }
+  const features=featureList
+    .map(cleanFeature)
+    .flatMap(x=>x.split(/[,;|]+/))
+    .map(cleanFeature)
+    .filter(Boolean)
+    .filter(x=>!/^\d+(?:\.\d+)?$/.test(x));
+
+  return `<div class="card pc"><h3>${esc(p.name)}</h3><b class="p">${inr(p.price)}</b><div class="mu">for ${duration} · ${p.max_customers>0?p.max_customers+' customers':'Unlimited customers'}</div><ul>${features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${b||''}</div>`;
+};
 function setup(){M(`<h3>Run once in Supabase → SQL Editor</h3><p class="mu">The first account created becomes the Owner (SRD Sons Technologies). Turn off "Confirm email" in Supabase Auth while testing.</p><textarea rows="10" readonly onclick="this.select()">${esc($('sql').textContent)}</textarea><p><button class="btn" onclick="closeM()">Close</button></p>`)}
-function authUI(up){$('welcome').style.display='none';const a=$('auth');a.style.display='block';
-a.innerHTML=`<div class="wb">${logo()}<div>Solar <span>Stack</span></div></div><p class="mu">${up?'Create your vendor account':'Login to your account'}</p>${up?'<p><input id="biz" placeholder="Business name"></p>':''}<p><input id="em" type="email" placeholder="Email"></p><p><input id="pw" type="password" placeholder="Password (min 6)"></p>
-<button class="btn" style="width:100%" onclick="doAuth(${up})">${up?'Sign up':'Login'}</button><p class="mu" id="am"></p><p><a href="#" onclick="authUI(${up?0:1});return false">${up?'Have an account? Login':'New vendor? Sign up'}</a> · <a href="#" onclick="welcome();return false">Home</a></p>`}
+function authUI(up){$('welcome').style.display='none';const a=$('auth');a.style.display='block';a.classList.add('authCard');
+a.innerHTML=`<div class="authBrand"><img class="brandWelcomeLogo" src="${LOGO}" alt="Solar Stack owner brand logo"><div class="brandWelcomeName">Solar Stack</div><div class="brandWelcomePowered">Powered By SRD Sons Technologies</div></div><div class="authIntro"><h2>${up?'Create your account':'Welcome back'}</h2><p class="mu">${up?'Set up your solar business account to get started.':'Login to manage your solar business.'}</p></div>${up?'<p><label class="authLabel" for="biz">Business name</label><input id="biz" placeholder="Enter business name" autocomplete="organization"></p>':''}<p><label class="authLabel" for="em">Email address</label><input id="em" type="email" placeholder="Enter your email" autocomplete="email"></p><p><label class="authLabel" for="pw">Password</label><input id="pw" type="password" placeholder="Password (minimum 6 characters)" autocomplete="${up?'new-password':'current-password'}"></p>
+<button class="btn authSubmit" style="width:100%" onclick="doAuth(${up})">${up?'Create account':'Login securely'}</button><p class="mu" id="am" role="status" aria-live="polite"></p><p class="authSwitch">${up?'Already have an account?':'New to Solar Stack?'} <a href="#" onclick="authUI(${up?0:1});return false">${up?'Login':'Sign up'}</a></p><p class="authHome"><a href="#" onclick="welcome();return false">← Back to home</a></p>`}
 async function doAuth(up){const e=$('em').value.trim(),p=$('pw').value,m=$('am');m.textContent='Please wait...';
 const {data,error}=up?await sb.auth.signUp({email:e,password:p,options:{data:{biz:$('biz').value}}}):await sb.auth.signInWithPassword({email:e,password:p});
 if(error)return m.textContent=error.message;if(!data.session)return m.textContent='Account created. Confirm via email, then login.';enter(data.user)}
@@ -369,7 +437,9 @@ if(w=='txt'){try{await navigator.clipboard.writeText(tx)}catch(e){const a=docume
 else if(w=='dev')navigator.share({title:DX.t,text:tx}).catch(()=>{});
 else if(w=='wa')window.open('https://wa.me/?text='+encodeURIComponent(tx.slice(0,3500)),'_blank');
 else if(w=='csv'){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';dlf(fnm('csv'),new Blob(['\ufeff'+[DX.c,...rows].map(r=>r.map(q).join(',')).join('\r\n')],{type:'text/csv'}))}
-else if(w=='xls'){try{await ljs('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js');const b=XLSX.utils.book_new();XLSX.utils.book_append_sheet(b,XLSX.utils.aoa_to_sheet([DX.c,...rows]),'Data');XLSX.writeFile(b,fnm('xlsx'))}catch(e){dlf(fnm('xls'),new Blob([`<html><head><meta charset="utf-8"></head><body><table border="1"><tr>${DX.c.map(h=>`<th>${esc(h)}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</table></body></html>`],{type:'application/vnd.ms-excel'}))}}
+else if(w=='xls'){try{await ljs('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js');const b=XLSX.utils.book_new();XLSX.utils.book_append_sheet(b,XLSX.utils.aoa_to_sheet([DX.c,...rows]),'Data');XLSX.writeFile(b,fnm('xlsx'))}catch(e){dlf(fnm('xls'),new Blob([`<html><head><meta charset="utf-8"></head><body><table border="1"><tr>${DX.c.map(h=>`<th>${esc(h)}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</table>
+(()=>{const mo=new MutationObserver(()=>sanitizePlanFeatureNodes());mo.observe(document.body,{childList:true,subtree:true});})();
+</body></html>`],{type:'application/vnd.ms-excel'}))}}
 else if(w=='pdf'){try{await ljs('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');await ljs('https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js');const d=new window.jspdf.jsPDF({orientation:DX.c.length>5?'landscape':'portrait'});d.setFontSize(14);d.text(DX.t+' - '+(P.business.name||'Solar Stack'),14,15);d.autoTable({head:[DX.c],body:rows.map(r=>r.map(v=>String(v).replace(/₹/g,'Rs. '))),startY:22,styles:{fontSize:8}});d.save(fnm('pdf'))}catch(e){toast('PDF library could not load. Check your internet connection.')}}}
 new MutationObserver(()=>document.querySelectorAll('input[type=password]:not([data-e])').forEach(i=>{i.dataset.e=1;const w=document.createElement('div');w.style.position='relative';i.parentNode.insertBefore(w,i);w.appendChild(i);i.style.paddingRight='44px';const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show or hide password');b.textContent='👁';b.style.cssText='position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;cursor:pointer;font-size:18px;padding:4px';b.onclick=()=>{const s=i.type=='password';i.type=s?'text':'password';b.textContent=s?'🙈':'👁'};w.appendChild(b)})).observe(document.body,{childList:true,subtree:true});
 
