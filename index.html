@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Solar Stack | Powered by SRD Sons Technologies</title>
+<title>Solar Stack | Solar Operations Workspace</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <style>
 :root{--bg:#f4f6fb;--cd:#fff;--tx:#14213d;--mu:#6b7686;--bd:#e1e6ef;--pr:#1769e0;--am:#f59e0b;--ok:#16a34a;--bad:#dc2626;--nav:#0b2a5b}
@@ -112,6 +112,130 @@ body.nav-open{overflow-x:hidden}
 </style>
 <style id="subscription-feature-safety">.pc ul li.numeric-only{display:none!important}.tag.b{background:rgba(23,105,224,.18);color:var(--pr)}
 a.btn{text-decoration:none;display:inline-block}
+</style>
+<style id="solar-stack-signature-redesign">
+/* Solar Stack signature visual system — an original operations-workspace aesthetic. */
+:root{--bg:#f3f6f4;--cd:#ffffff;--tx:#172923;--mu:#687970;--bd:#dce6df;--pr:#087f5b;--am:#d6f36a;--ok:#16845b;--bad:#c84646;--nav:#142b25;--ss-shadow:0 8px 28px rgba(20,43,37,.055);--ss-shadow-hover:0 14px 34px rgba(20,43,37,.11)}
+@media(prefers-color-scheme:dark){:root{--bg:#101a17;--cd:#182520;--tx:#edf5ef;--mu:#9aaba1;--bd:#2b3d34;--pr:#48c99a;--am:#d6f36a;--ok:#48c99a;--bad:#ff7777;--nav:#0a1511}}
+html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em;background:radial-gradient(ellipse at 95% 0%,rgba(8,127,91,.055),transparent 35%),var(--bg);color:var(--tx)}
+button,.btn,a,input,select,textarea{transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+button:focus-visible,.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(8,127,91,.25);outline-offset:2px}
+#app{min-height:100dvh} .hd{height:66px!important;background:color-mix(in srgb,var(--cd) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);box-shadow:0 3px 18px rgba(20,43,37,.035);padding:7px 20px!important}
+#tg{width:42px;height:42px;border-radius:12px;color:var(--tx);background:var(--bg);font-size:23px}#tg:hover{background:var(--am);color:#142b25;transform:translateY(-1px)}
+.hd .wb{font-size:16px;gap:10px;letter-spacing:-.035em}.hd .wb span{color:var(--pr)}.hd .brandIcon{width:43px!important;height:43px!important;flex-basis:43px!important;border-radius:12px}
+.hd .btn{border-radius:12px;min-height:38px;padding:8px 13px}
+aside{top:66px!important;width:258px!important;background:linear-gradient(165deg,#193b30 0%,#112820 58%,#0c1d17 100%);padding:17px 13px!important;border-right:1px solid rgba(255,255,255,.07);box-shadow:12px 0 35px rgba(14,38,29,.08);scrollbar-width:thin}
+nav{padding:8px 2px 18px}nav a{position:relative;display:flex!important;align-items:center;min-height:43px;padding:11px 13px!important;margin:3px 0;border-radius:12px!important;color:#c5d8ce!important;font-size:13.5px!important;font-weight:600;letter-spacing:.005em;border:1px solid transparent}
+nav a:before{content:"";width:5px;height:5px;border-radius:50%;background:rgba(214,243,106,.55);margin-right:11px;flex:0 0 5px}nav a.on{background:rgba(214,243,106,.13)!important;border-color:rgba(214,243,106,.18);color:#f6ffe5!important;box-shadow:inset 3px 0 0 var(--am)}nav a.on:before{width:6px;height:6px;background:var(--am)}nav a:hover{background:rgba(255,255,255,.075)!important;color:#fff!important;transform:translateX(2px)}
+#ov{top:66px!important}main{padding:88px 26px 38px!important;max-width:1800px;margin-right:auto}body.nav-open main{margin-left:258px!important}
+main>h2{font-size:clamp(25px,2.3vw,34px);font-weight:820;letter-spacing:-.055em;margin:0 0 22px;line-height:1.18}main>h2:after{content:"";display:block;width:42px;height:4px;border-radius:4px;background:var(--am);margin-top:12px}
+h3{font-size:17px;font-weight:750;letter-spacing:-.025em}.mu{font-size:12.5px;line-height:1.55;color:var(--mu)}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:17px;padding:19px;box-shadow:var(--ss-shadow)}.grid{gap:15px;margin-bottom:19px}.grid>.card,.grid>.stat{min-width:0}.card:hover{border-color:color-mix(in srgb,var(--pr) 25%,var(--bd));box-shadow:var(--ss-shadow-hover)}
+.stat{border-radius:17px!important;padding:18px!important;position:relative;overflow:hidden;cursor:pointer;box-shadow:var(--ss-shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.stat:after{content:"";position:absolute;right:-18px;top:-22px;width:76px;height:76px;border-radius:24px;background:color-mix(in srgb,var(--pr) 8%,transparent);transform:rotate(25deg)}.stat:hover{transform:translateY(-3px);box-shadow:var(--ss-shadow-hover)}.stat .mu{font-weight:650;letter-spacing:.015em}.stat b{font-size:clamp(23px,2vw,30px)!important;letter-spacing:-.055em;color:var(--tx);position:relative;z-index:1}
+.btn{background:var(--pr);color:#fff;border-radius:11px;padding:10px 15px;font-size:13px;font-weight:750;box-shadow:0 4px 10px rgba(8,127,91,.12)}.btn:hover{filter:brightness(1.04);transform:translateY(-1px);box-shadow:0 7px 16px rgba(8,127,91,.16)}.btn:active{transform:translateY(0)}.btn.a{background:var(--am);color:#193329;box-shadow:none}.btn.s{background:var(--cd);border:1px solid var(--bd);color:var(--tx);box-shadow:none}.btn.s:hover{background:var(--bg);border-color:var(--pr)}.btn.d{color:var(--bad)}
+input,select,textarea{background:var(--cd);border:1px solid var(--bd);border-radius:11px;padding:11px 12px;min-height:42px}input:hover,select:hover,textarea:hover{border-color:color-mix(in srgb,var(--pr) 45%,var(--bd))}input:focus,select:focus,textarea:focus{border-color:var(--pr);box-shadow:0 0 0 3px color-mix(in srgb,var(--pr) 12%,transparent);outline:none}
+label,.fg label{font-size:12px!important;font-weight:750!important;letter-spacing:.025em;color:var(--mu)!important;margin-bottom:5px}form,.fg{gap:13px}.top{margin-bottom:18px}.top h2{letter-spacing:-.04em}
+.tw{border:1px solid var(--bd);border-radius:14px;background:var(--cd)}table{font-size:13px!important;border-collapse:separate;border-spacing:0}th,td{padding:12px 14px!important;border-bottom:1px solid var(--bd)!important}th{background:var(--bg);font-size:10.5px!important;letter-spacing:.075em;color:var(--mu)!important;font-weight:800!important;position:sticky;top:0;z-index:1}tr:last-child td{border-bottom:0!important}tbody tr:hover,table tr:hover td{background:color-mix(in srgb,var(--pr) 4%,var(--cd))}
+.tag{font-weight:750;padding:4px 9px;border-radius:7px}.bar{height:9px;border-radius:99px;background:color-mix(in srgb,var(--bd) 80%,var(--cd))}.bar i{border-radius:99px;background:var(--pr)}
+#mod{backdrop-filter:blur(5px);background:rgba(10,25,19,.48);padding:clamp(12px,3vw,28px)}#mod>div{max-width:760px!important}#mb{border-radius:20px!important;border:1px solid var(--bd);box-shadow:0 28px 90px rgba(0,0,0,.2);padding:22px!important;background:var(--cd)}#toast{border-radius:12px;background:#142b25;padding:12px 18px;box-shadow:0 10px 35px rgba(0,0,0,.2)}
+#auth.authCard{border-radius:24px;background:var(--cd);border:1px solid var(--bd);box-shadow:0 25px 90px rgba(20,43,37,.12)}.authBrand .brandWelcomePowered{color:var(--pr)}.authSubmit{background:var(--pr);box-shadow:0 8px 18px rgba(8,127,91,.2)}
+.hero{background:radial-gradient(circle at 82% 18%,rgba(214,243,106,.2),transparent 30%),linear-gradient(130deg,#142b25,#087f5b 75%,#116b50);border-radius:0 0 30px 30px;padding-top:62px;padding-bottom:62px}.hero h1{font-weight:850;letter-spacing:-.055em;line-height:1.04}.hero .btn.a{background:var(--am);color:#173128}.wn{backdrop-filter:blur(14px);border-color:var(--bd)}.sec{padding-top:48px;padding-bottom:48px}.sec h2{font-weight:820;letter-spacing:-.04em}
+#splash{background:radial-gradient(circle at 50% 20%,rgba(214,243,106,.18),transparent 32%),linear-gradient(145deg,#142b25,#087f5b 70%,#0c5942)}#splash .gl{border-color:rgba(214,243,106,.45)}#splash h1 span{color:var(--am)}#sfe b{border:1px solid rgba(255,255,255,.13);border-radius:10px;font-size:12px;letter-spacing:.015em}
+@media(min-width:900px){body.nav-open main{margin-left:258px!important}body.nav-open aside{transform:none!important}}
+@media(max-width:899px){main{padding:82px 16px 28px!important}body.nav-open main{margin-left:0!important}aside{width:min(300px,86vw)!important;box-shadow:18px 0 50px rgba(0,0,0,.2)}.card{padding:15px;border-radius:15px}.grid{gap:11px}.hd{padding:6px 12px!important}}
+@media(max-width:600px){main>h2{font-size:25px;margin-bottom:17px}.hd .wb>div{max-width:38vw!important}.hd .btn{font-size:12px;padding:7px 9px}.stat{padding:15px!important}.stat b{font-size:22px!important}.card{padding:14px}#mb{padding:16px!important}.hero{border-radius:0 0 22px 22px;padding:40px 20px}.sec{padding:32px 20px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+
+<style id="india-tricolour-theme">
+/* Solar Stack — premium Indian-inspired visual system. Tricolour is an accent, not a dominant fill. */
+:root{
+ --bg:#f4f7f8; --cd:#ffffff; --tx:#17243a; --mu:#667487; --bd:#e1e7ee;
+ --pr:#087653; --am:#e99535; --ok:#13815c; --bad:#c2414b; --nav:#14263f;
+ --chakra:#173a67; --tricolor-saffron:#e99535; --tricolor-white:#ffffff; --tricolor-green:#13815c;
+ --ss-shadow:0 10px 30px rgba(20,38,63,.065);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased}
+/* Crisp, quiet surfaces with restrained depth */
+.card,.stat,.pc,.panel,.modal-content,.dropdown-menu,.table-wrap,.chart-card{
+ border:1px solid var(--bd);border-radius:16px;box-shadow:var(--ss-shadow);background:var(--cd)
+}
+.card,.stat{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.card:hover,.stat:hover{border-color:#c9d8d4;box-shadow:0 14px 34px rgba(20,38,63,.09)}
+.btn{background:linear-gradient(135deg,#0b7957,#075e45);color:#fff;border:1px solid transparent;border-radius:10px;box-shadow:0 4px 12px rgba(8,118,83,.16);font-weight:650;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+.btn:hover{filter:brightness(1.04);transform:translateY(-1px);box-shadow:0 7px 18px rgba(8,118,83,.22)}
+.btn:active{transform:translateY(0)}
+.btn.a{background:#fff5e8;color:#87501a;border:1px solid #f1d4b0;box-shadow:none}
+.btn.s{background:#fff;color:#33445a;border:1px solid #d9e1e9;box-shadow:none}
+.btn.d{background:#fff1f1;color:#a72f3b;border:1px solid #f0c9cd;box-shadow:none}
+input,select,textarea{background:#fff;border:1px solid #d8e1e8;border-radius:10px;color:var(--tx);transition:border-color .15s ease,box-shadow .15s ease}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#178565;box-shadow:0 0 0 3px rgba(19,129,92,.12)}
+label,.label{color:#34445a;font-weight:650}
+/* Navigation: deep blue-charcoal with a refined tricolour indicator */
+nav{background:linear-gradient(180deg,#172b45 0%,#102238 100%);color:#eef4fa;box-shadow:8px 0 28px rgba(14,32,53,.08)}
+nav a{color:#c5d2e0;border-radius:10px;margin:2px 9px;transition:background .16s ease,color .16s ease,transform .16s ease}
+nav a:hover{background:rgba(255,255,255,.075);color:#fff;transform:translateX(2px);box-shadow:none}
+nav a.on{background:linear-gradient(90deg,rgba(19,129,92,.28),rgba(19,129,92,.10));color:#fff;box-shadow:inset 3px 0 0 #e99535}
+nav a.on:before{color:#e99535}
+.brandWelcomePowered,.wb span{color:#e99535}
+/* Header and hero */
+.hd{background:rgba(255,255,255,.96);border-top:0;border-bottom:1px solid var(--bd);position:sticky;top:0;backdrop-filter:blur(14px)}
+.hd:before{content:"";display:block;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e99535 0 22%,#fff 22% 44%,#13815c 44% 100%);pointer-events:none}
+.hero{background:radial-gradient(ellipse at 90% 0%,rgba(255,255,255,.13),transparent 34%),linear-gradient(125deg,#14263f 0%,#174c49 64%,#087653 100%);color:#fff;border-bottom:0;border-radius:0 0 22px 22px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;background:linear-gradient(90deg,#e99535 0 33.33%,#fff 33.33% 66.66%,#13815c 66.66% 100%)}
+.hero h1,.hero h2{color:#fff;letter-spacing:-.025em}
+.hero p{color:rgba(255,255,255,.82)}
+/* Tricolour as a subtle signature in the app, not loud colour blocks */
+.tag{background:#fff3e5;color:#885019;border:1px solid #f3dfc5;border-radius:999px}
+.tag.g{background:#e8f5ef;color:#086747;border:1px solid #cbe8da}
+.bar{background:#e8edf1;border-radius:999px;overflow:hidden}
+.bar i{background:linear-gradient(90deg,#087653,#39a77b);border-radius:999px}
+.pc b.p{color:#087653}.pc li:before{color:#13815c}
+#tg{color:var(--chakra)}
+#splash{background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.12),transparent 28%),linear-gradient(135deg,#14263f 0%,#174c49 62%,#087653 100%)}
+#splash h1 span{color:#f0a34a}
+#splash .gl{border-color:rgba(255,255,255,.58)}
+.ld i{background:#e99535}
+.ban{background:#fff5e8;border:1px solid #f0d6b4;color:#80501d;border-radius:12px}
+/* Data tables, headings and chart surfaces */
+th{background:#f1f5f7;color:#425269;font-weight:700}
+tbody tr:hover{background:#f7faf9}
+hr{border-color:var(--bd);opacity:1}
+:focus-visible{outline:3px solid rgba(8,118,83,.28);outline-offset:2px}
+@media(prefers-color-scheme:dark){
+ :root{--bg:#101923;--cd:#172432;--tx:#edf3f8;--mu:#a4b2c2;--bd:#2b3b4d;--pr:#36b287;--am:#f0ad61;--ok:#45c49a;--bad:#ff7c83;--nav:#0e1c2d;--chakra:#9cb9ee;--ss-shadow:0 10px 30px rgba(0,0,0,.18)}
+ nav{background:linear-gradient(180deg,#122238,#0b1726)}
+ .hd{background:rgba(20,33,49,.96)}
+ input,select,textarea,.btn.s{background:#1a2a3a;color:var(--tx);border-color:#34485b}
+ th{background:#1c2c3b;color:#d8e4ef}tbody tr:hover{background:#1a2a37}
+ .tag{background:#392c1e;color:#ffd5a1;border-color:#59422a}.tag.g{background:#16372d;color:#9be0c1;border-color:#24513f}
+ .btn.a{background:#382a1c;color:#ffd5a1;border-color:#60472c}
+ .ban{background:#352a1d;color:#f3c995;border-color:#60472c}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+
+<style id="solar-stack-blue-white-premium">
+/* Solar Stack premium blue & white brand system */
+:root{color-scheme:light;--bg:#f3f7fc;--cd:#ffffff;--tx:#152a45;--mu:#64758b;--bd:#dce6f1;--pr:#1769d2;--am:#e8f1ff;--ok:#16815d;--bad:#c43d4b;--nav:#102b4e;--chakra:#174f91;--ss-shadow:0 8px 26px rgba(19,53,91,.065);--ss-shadow-hover:0 14px 34px rgba(19,53,91,.12)}
+html{scroll-behavior:smooth}body{background:linear-gradient(180deg,#f8fbff 0%,var(--bg) 42%,#f4f8fd 100%);color:var(--tx);-webkit-font-smoothing:antialiased}
+.hd{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #dce6f1!important;box-shadow:0 4px 20px rgba(17,49,84,.055)!important;backdrop-filter:blur(16px)}
+.hd:before{height:3px!important;background:linear-gradient(90deg,#174f91 0%,#2f83e5 55%,#b8d8ff 100%)!important}
+#tg{background:#edf4ff!important;color:#174f91!important;border:1px solid #d7e6fa!important}#tg:hover{background:#dceaff!important;color:#103966!important}
+.hd .wb span,.brandWelcomePowered{color:#1769d2!important}
+aside{background:linear-gradient(180deg,#153b68 0%,#102e52 58%,#0b2341 100%)!important;border-right:1px solid rgba(255,255,255,.08)!important;box-shadow:10px 0 32px rgba(16,46,82,.09)!important}
+nav{background:transparent!important;color:#fff!important;box-shadow:none!important}nav a{color:#d6e5f7!important;border:1px solid transparent!important;border-radius:11px!important}nav a:before{background:#80b8ff!important}nav a:hover{background:rgba(255,255,255,.09)!important;color:#fff!important}nav a.on{background:linear-gradient(90deg,rgba(65,139,228,.28),rgba(65,139,228,.12))!important;border-color:rgba(155,198,249,.2)!important;color:#fff!important;box-shadow:inset 3px 0 0 #7eb8ff!important}nav a.on:before{background:#9ccaff!important}
+main>h2:after{background:linear-gradient(90deg,#1769d2,#8dc1ff)!important}
+.card,.stat,.pc,.panel,.modal-content,.dropdown-menu,.table-wrap,.chart-card{background:#fff;border-color:var(--bd);box-shadow:var(--ss-shadow)}.card:hover,.stat:hover{border-color:#b9d3f2;box-shadow:var(--ss-shadow-hover)}
+.btn{background:linear-gradient(135deg,#2478dc,#155bb4)!important;color:#fff!important;border:1px solid transparent!important;border-radius:11px!important;box-shadow:0 4px 12px rgba(23,105,210,.16)!important}.btn:hover{filter:brightness(1.04);box-shadow:0 7px 18px rgba(23,105,210,.22)!important}.btn.a{background:#eaf3ff!important;color:#174f91!important;border:1px solid #cfe2fb!important;box-shadow:none!important}.btn.s{background:#fff!important;color:#244361!important;border:1px solid #d6e2ef!important;box-shadow:none!important}.btn.s:hover{background:#f2f7ff!important;border-color:#9fc4f2!important}.btn.d{background:#fff2f3!important;color:#a52c3a!important;border:1px solid #f0cbd0!important}
+input,select,textarea{background:#fff!important;color:#172c46!important;border:1px solid #d4e0ee!important;border-radius:10px!important}input:hover,select:hover,textarea:hover{border-color:#8db8ee!important}input:focus,select:focus,textarea:focus{border-color:#2778d5!important;box-shadow:0 0 0 3px rgba(39,120,213,.13)!important;outline:none}
+label,.fg label,.label{color:#405873!important}th{background:#eef4fb!important;color:#3d5673!important}tbody tr:hover,table tr:hover td{background:#f4f8fe!important}.tw{border-color:var(--bd)!important;background:#fff!important}.tag{background:#edf4ff!important;color:#174f91!important;border:1px solid #d5e6fb!important}.tag.g{background:#eaf8f1!important;color:#126c4b!important;border-color:#ccebdc!important}.bar{background:#e5edf7!important}.bar i{background:linear-gradient(90deg,#1769d2,#65a9f4)!important}
+.hero{background:radial-gradient(ellipse at 88% 12%,rgba(255,255,255,.18),transparent 32%),linear-gradient(125deg,#102b4e 0%,#174f91 58%,#2679d5 100%)!important;color:#fff!important;border-radius:0 0 26px 26px!important}.hero:after{height:3px!important;background:linear-gradient(90deg,#174f91,#7fb7f4,#dcecff)!important}.hero h1,.hero h2{color:#fff!important}.hero p{color:rgba(255,255,255,.86)!important}.hero .btn.a{background:#fff!important;color:#174f91!important;border-color:#fff!important}
+#splash{background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.14),transparent 28%),linear-gradient(135deg,#102b4e 0%,#174f91 60%,#2679d5 100%)!important}#splash h1 span{color:#b9d9ff!important}.ld i{background:#80b8ff!important}#mod{background:rgba(10,29,52,.48)!important}#toast{background:#102b4e!important;color:#fff!important}.ban{background:#edf4ff!important;border-color:#d2e3f8!important;color:#174f91!important}
+#auth.authCard{background:#fff!important;border-color:#dce6f1!important;box-shadow:0 25px 80px rgba(16,46,82,.13)!important}.authSubmit{background:linear-gradient(135deg,#2478dc,#155bb4)!important}
+@media(prefers-color-scheme:dark){:root{color-scheme:light;--bg:#f3f7fc;--cd:#fff;--tx:#152a45;--mu:#64758b;--bd:#dce6f1;--pr:#1769d2;--am:#e8f1ff;--ok:#16815d;--bad:#c43d4b;--nav:#102b4e;--chakra:#174f91;--ss-shadow:0 8px 26px rgba(19,53,91,.065)}body{background:linear-gradient(180deg,#f8fbff 0%,#f3f7fc 100%);color:#152a45}input,select,textarea,.btn.s{background:#fff!important;color:#172c46!important;border-color:#d4e0ee!important}th{background:#eef4fb!important;color:#3d5673!important}tbody tr:hover{background:#f4f8fe!important}.hd{background:rgba(255,255,255,.96)!important}.tag{background:#edf4ff!important;color:#174f91!important;border-color:#d5e6fb!important}.btn.a{background:#eaf3ff!important;color:#174f91!important;border-color:#cfe2fb!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
 </head><body>
 <div id="splash"><img class="ownerBrandSplash" data-l alt="Solar Stack Powered by SRD Sons Technologies"><div id="sfe"></div><div class="ld"><i></i></div></div>
@@ -262,7 +386,7 @@ $('welcome').style.display='none';$('auth').style.display='none';$('app').style.
 const own=()=>P.role=='owner',okPlan=()=>own()||(P.plan_expiry&&P.plan_expiry>=today()),myPlan=()=>plans.find(p=>p.id==P.plan_id);
 const bl=()=>P.business.logo?`<img class="brandIcon" src="${P.business.logo}" alt="${esc(P.business.name||'Business logo')}" title="${esc(P.business.name||'Business logo')}">`:`<div class="gl" style="display:grid;place-items:center;background:var(--pr);color:#fff;font-weight:800">${esc((P.business.name||'S')[0].toUpperCase())}</div>`;
 function hdr(){$('hd').innerHTML=`<div class="wb" style="font-size:17px"><button id="tg" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>${bl()}<div>${esc(P.business.name||(own()?'SRD Sons Technologies':'My Business'))}<div class="mu" style="font-weight:400">${own()?'Owner console':esc(P.email)}</div></div></div><div>${own()?'<span class="tag g">Owner</span>':okPlan()?`<span class="tag g">${esc(P.plan_name||'Plan')} · till ${P.plan_expiry}</span>`:'<span class="tag r">No active plan</span>'} <button class="btn s" onclick="out()">Sign out</button></div>`}
-async function go(x){v=x;if(innerWidth<900)document.body.classList.remove('nav-open');const N=P.parent?[['dash','Home'],['lead','Leads'],['quote','Proposals'],['cust','Projects'],['stock','Procurement'],['svc','Service']]:own()?[['odash','Home'],['users','Users'],['plans','Plans'],['profile','Profile']]:[['dash','Home'],['lead','Leads'],['quote','Proposals'],['cust','Projects'],['stock','Procurement'],['svc','Service'],['tpl','Templates'],['books','Books'],['team','Team'],['plan','Plan'],['profile','Profile']];
+async function go(x){v=x;if(innerWidth<900)document.body.classList.remove('nav-open');const N=P.parent?[['dash','Home'],['lead','Leads'],['quote','Proposals'],['cust','Projects'],['docs','Documents'],['stock','Procurement'],['svc','Service']]:own()?[['odash','Home'],['users','Users'],['plans','Plans'],['profile','Profile']]:[['dash','Home'],['lead','Leads'],['quote','Proposals'],['cust','Projects'],['docs','Documents'],['stock','Procurement'],['svc','Service'],['tpl','Templates'],['books','Books'],['team','Team'],['plan','Plan'],['profile','Profile']];
 $('nav').innerHTML=N.map(n=>`<a class="${n[0]==x?'on':''}" onclick="go('${n[0]}')">${n[1]}</a>`).join('');
 if(own()){const r=await sb.from('ss_plans').select('*').order('price');plans=r.data||[];const u=await sb.from('ss_profiles').select('*').neq('role','owner').order('created_at',{ascending:false});US=u.data||[]}
 else{const r=await sb.from('ss_records').select('*').eq('user_id',OID()).order('created_at',{ascending:false});D={};(r.data||[]).forEach(x=>(D[x.kind]=D[x.kind]||[]).push({id:x.id,...x.data}));R=D.customer||[];if(!P.parent){const s=await sb.from('ss_profiles').select('email').eq('parent',P.id);SF=s.data||[]}}
@@ -342,7 +466,7 @@ function pf(id){const p=id?plans.find(x=>x.id==id):{days:30,max_customers:0},f=(
 M(`<h3>${id?'Edit':'Add'} plan</h3><div class="fg">${f('name','Plan name','text','w')}${f('price','Price ₹','number')}${f('days','Validity (days)','number')}${f('max_customers','Max customers (0 = unlimited)','number','w')}${f('features','Features (comma separated)','text','w')}</div><p><button class="btn" onclick="ps('${id||''}')">Save</button> <button class="btn s" onclick="closeM()">Cancel</button></p>`)}
 async function ps(id){const o={name:$('p_name').value,price:+$('p_price').value||0,days:+$('p_days').value||30,max_customers:+$('p_max_customers').value||0,features:$('p_features').value};if(!o.name)return toast('Name required');if(await put('ss_plans',o,id||null)){closeM();go('plans')}}
 async function pdel(id){if(confirm('Delete plan?')){await sb.from('ss_plans').delete().eq('id',id);go('plans')}}
-const VW={dash:dashU,cust:()=>custU(),plan:planU,profile:profU,odash,users:usersV,plans:plansO};
+const VW={dash:dashU,cust:()=>custU(),docs:documentsU,plan:planU,profile:profU,odash,users:usersV,plans:plansO};
 /* ---------- Solar Ladder style modules ---------- */
 let D={};const L=k=>D[k]||[],LS=['New','Contacted','Site Survey','Proposal Sent','Negotiation','Won','Lost'];
 const MD={
@@ -452,10 +576,11 @@ function dashW(){const t=R.reduce((a,c)=>a+(+c.cost||0),0),rc=R.reduce((a,c)=>a+
 rv=ms.map(m=>payn().filter(p=>p.d.startsWith(m)).reduce((a,p)=>a+p.a,0)),xp=ms.map(m=>L('expense').filter(e=>String(e.date).startsWith(m)).reduce((a,e)=>a+(+e.amount||0),0)),
 fu=L('lead').filter(l=>l.follow&&l.follow<=today()&&!['Won','Lost'].includes(l.stage)).length,sv=L('ticket').filter(x=>x.status!='Resolved'&&x.due&&x.due<=today()).length,
 cnt=LS.map(s=>L('lead').filter(l=>l.stage==s).length),mx=Math.max(1,...cnt),dn=R.filter(c=>pr(c)==100).length,ip=R.filter(c=>pr(c)>0&&pr(c)<100).length;
-return `${lock()}<h2>Dashboard</h2><p class="mu">Tap any tile or bar to see the records and share them.</p><div class="grid">${tile('Leads',L('lead').length,'lead')}${tile('Follow-ups due',fu,'fu')}${tile('Proposals sent',L('quote').filter(q=>q.status=='Sent').length,'quote')}${tile('Active projects',R.filter(c=>pr(c)<100).length,'act')}${tile('kW (projects)',R.reduce((a,c)=>a+(+c.kw||0),0),'kw')}${tile('Project value',inr(t),'val')}${tile('Received',inr(rc),'rec')}${tile('Pending',inr(t-rc),'pend')}${tile('Expenses',inr(ex),'exp')}${tile('Net profit',inr(rc-ex),'net')}${tile('Service due',sv,'svc')}</div>
+return `${lock()}<h2>Dashboard</h2>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr))"><div class="card"><b>Income vs expenses (6 months)</b>${bchart(ms,rv,xp)}<div class="mu"><span style="color:#16a34a">■</span> Income <span style="color:#dc2626">■</span> Expenses</div></div>
 <div class="card"><b>Lead pipeline</b>${LS.map((x,i)=>`<div onclick="dd('st:${x}')" style="cursor:pointer;margin:6px 0"><div class="mu">${x} · <b>${cnt[i]}</b></div><div class="bar"><i style="width:${cnt[i]/mx*100}%;background:var(--pr)"></i></div></div>`).join('')}</div>
-<div class="card"><b>Project status</b><p></p>${donut([dn,ip,R.length-dn-ip],['#16a34a','#f59e0b','#94a3b8'],['Completed','In progress','Not started'])}</div></div>`}
+<div class="card"><b>Project status</b><p></p>${donut([dn,ip,R.length-dn-ip],['#16a34a','#f59e0b','#94a3b8'],['Completed','In progress','Not started'])}</div></div>
+<h3 style="margin:18px 0 10px">Key statistics</h3><div class="grid">${tile('Leads',L('lead').length,'lead')}${tile('Follow-ups due',fu,'fu')}${tile('Proposals sent',L('quote').filter(q=>q.status=='Sent').length,'quote')}${tile('Active projects',R.filter(c=>pr(c)<100).length,'act')}${tile('kW (projects)',R.reduce((a,c)=>a+(+c.kw||0),0),'kw')}${tile('Project value',inr(t),'val')}${tile('Received',inr(rc),'rec')}${tile('Pending',inr(t-rc),'pend')}${tile('Expenses',inr(ex),'exp')}${tile('Net profit',inr(rc-ex),'net')}${tile('Service due',sv,'svc')}</div>`}
 function odashW(){const act=US.filter(u=>u.plan_expiry>=today()),rev=act.reduce((a,u)=>a+(+(plans.find(p=>p.id==u.plan_id)||{}).price||0),0),pl=plans.map(p=>US.filter(u=>u.plan_id==p.id&&u.plan_expiry>=today()).length),cl=['#1769e0','#f59e0b','#16a34a','#dc2626','#8b5cf6','#06b6d4'];
 return `<h2>Owner dashboard</h2><p class="mu">Tap any tile to see the records and share them.</p><div class="grid">${tile('Vendors',US.length,'ov')}${tile('Active plans',act.length,'oa')}${tile('Pending requests',US.filter(u=>u.plan_request).length,'op')}${tile('Active plan value',inr(rev),'oa')}${tile('Plans',plans.length,'opl')}</div><div class="card"><b>Active vendors by plan</b><p></p>${donut(pl,plans.map((p,i)=>cl[i%6]),plans.map(p=>esc(p.name)))}</div>`}
 Object.assign(VW,{dash:dashW,odash:odashW});
@@ -562,4 +687,209 @@ o.innerHTML=`<div class="card"><b>${esc(t.no)}</b> · ${esc(t.type)}<div class="
 const _boot=boot;boot=async function(){const q=new URLSearchParams(location.search).get('ticket');return q?tkForm(q):_boot()};
 
 const T0=Date.now();boot().finally(()=>setTimeout(()=>{const x=$('splash');if(x){x.style.opacity=0;setTimeout(()=>x.remove(),500)}},Math.max(0,2800-(Date.now()-T0))));
+
+/* ---------- EPC document generator: Work Completion Report, Annexure-I/Proforma-A, Model Agreement ---------- */
+const DOC_FIELDS=[
+ ['consumerNo','Consumer Number'],['email','Consumer E-mail'],['sanctionNo','Sanction Number'],
+ ['category','Category (Govt/Private Sector)'],['address','Complete Installation Address'],
+ ['arrangement','RE Arrangement Type'],['source','RE Source'],['sanctionKW','Sanctioned Capacity (kW)'],
+ ['capacityType','Capacity Type'],['model','Project Model'],['installedKW','Installed Capacity Rooftop (kW)'],
+ ['roofGroundKW','Installed Capacity Rooftop + Ground (kW)'],['groundKW','Installed Capacity Ground (kW)'],
+ ['installDate','Installation Date'],['moduleMake','Solar Module Make'],['almm','ALMM Model Number'],
+ ['moduleWp','Module Capacity (Wp)'],['moduleCount','Number of PV Modules'],['moduleWarranty','Module Warranty Details'],
+ ['inverterMake','Inverter Make'],['inverterModel','Inverter Model Number'],['inverterRating','Inverter Rating'],
+ ['controller','Charge Controller / MPPT'],['inverterKW','Inverter Capacity (kW)'],['manufactureYear','Inverter Manufacturing Year'],
+ ['acEarth','AC Earth Resistance'],['dcEarth','DC Earth Resistance'],['arrester','Lightning Arresters'],
+ ['agreementDate','Agreement Date'],['agreementKW','Agreement System Capacity (kW)'],['systemCost','Total System Cost (₹)'],
+ ['moduleEfficiency','Module Efficiency'],['paymentTerms','Payment Terms'],['discom','DISCOM / Electricity Distribution Company'],
+ ['consumerCity','Electricity Connection City'],['consumerNumber','Electricity Consumer Number (Agreement)']
+];
+const docDefaults={consumerNo:'',email:'',sanctionNo:'',category:'PRIVATE',arrangement:'Net Metering Arrangement',source:'Roof Top Solar',sanctionKW:'',capacityType:'RESIDENTIAL',model:'CAPEX',installedKW:'',roofGroundKW:'',groundKW:'',installDate:today(),moduleMake:'',almm:'',moduleWp:'',moduleCount:'',moduleWarranty:'',inverterMake:'',inverterModel:'',inverterRating:'',controller:'',inverterKW:'',manufactureYear:'',acEarth:'',dcEarth:'',arrester:'01',agreementDate:today(),agreementKW:'',systemCost:'',moduleEfficiency:'',paymentTerms:'10% advance; 80% before dispatch; 10% after installation and commissioning',discom:'Maharashtra State Electricity Distribution Co. Ltd.',consumerCity:'',consumerNumber:''};
+let DOC_CURRENT=null;
+function documentsU(){
+ if(own())return `<h2>Documents</h2><div class="ban">Document generation is available from an EPC vendor account. Sign in as a vendor to create consumer documents.</div>`;
+ const list=R.slice().sort((a,b)=>(a.name||'').localeCompare(b.name||''));
+ return `${lock()}<div class="top"><div><h2>Document Centre</h2><div class="mu">Generate three PDF documents from a consumer's project record.</div></div></div>
+ <div class="card" style="margin-bottom:14px"><div class="fg">
+ <div class="w"><label>Search/select consumer by name or mobile number</label><input id="docSearch" list="docConsumers" placeholder="Type consumer name or mobile number" oninput="docSelect(this.value)"><datalist id="docConsumers">${list.map(c=>`<option value="${esc(c.name||'')} — ${esc(c.phone||'')}"></option>`).join('')}</datalist></div>
+ <div class="w"><label>Selected consumer</label><div id="docSelected" class="ban">Select a consumer to load their project details.</div></div>
+ </div></div>
+ <div id="docForm" class="card" style="display:none"><div class="top"><h3>Review document details</h3><span class="mu">Check and complete all applicable fields before generating.</span></div>
+ <div class="fg" id="docFields"></div><p class="mu">Fields not present in the selected project can be entered here. The three PDFs will download separately.</p>
+ <div class="card" style="margin-top:14px"><h3>Generate documents separately</h3><p class="mu">Choose the exact document you need and select PDF or Word. Only the selected document will be generated.</p>
+ <div class="card" style="margin:10px 0"><h4>1. Work Completion Report for Solar Power Plant</h4><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="generateOneEPCDoc('work','pdf')">Generate PDF</button><button class="btn s" onclick="generateOneEPCDoc('work','word')">Generate Word</button></div></div>
+ <div class="card" style="margin:10px 0"><h4>2. Annexure-I — Commissioning Report / Proforma-A</h4><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="generateOneEPCDoc('annexure','pdf')">Generate PDF</button><button class="btn s" onclick="generateOneEPCDoc('annexure','word')">Generate Word</button></div></div>
+ <div class="card" style="margin:10px 0"><h4>3. Model Agreement — Applicant and Registered/Empanelled Vendor</h4><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="generateOneEPCDoc('agreement','pdf')">Generate PDF</button><button class="btn s" onclick="generateOneEPCDoc('agreement','word')">Generate Word</button></div></div>
+ <button class="btn s" onclick="docReset()">Clear selection</button><div id="docStatus" class="mu" style="margin-top:10px"></div></div>
+ <div class="card" style="margin-top:14px"><h3>Document templates</h3><p class="mu">Review consumer, system, vendor and legal details before signing or submitting.</p><p class="mu"><b>Format note:</b> The supplied files are already-filled PDF examples, not blank editable templates. This version keeps the document names and sections and provides separate PDF/Word generation; exact page-for-page reproduction with replacement fields requires clean/blank source templates or the original editable Word files.</p></div>`;
+}
+function docSelect(v){
+ const c=R.find(x=>`${x.name||''} — ${x.phone||''}`===v)||R.find(x=>(x.name||'').toLowerCase()===v.trim().toLowerCase()||(x.phone||'').replace(/\D/g,'')===v.replace(/\D/g,'')&&v.replace(/\D/g,'').length>=10);
+ if(!c)return;
+ DOC_CURRENT=c;
+ const vals={...docDefaults,consumerNo:c.consumerNo||c.consumer_number||'',consumerNumber:c.consumerNo||c.consumer_number||'',email:c.email||'',address:c.addr||'',installedKW:c.kw||'',sanctionKW:c.kw||'',roofGroundKW:c.kw||'',groundKW:'0',agreementKW:c.kw||'',systemCost:c.cost||'',consumerCity:c.city||'',installDate:c.done&&Object.values(c.done).some(x=>x.date)?Object.values(c.done).filter(x=>x.date).slice(-1)[0].date:today()};
+ $('docSelected').innerHTML=`<b>${esc(c.name||'')}</b> · ${esc(c.phone||'')}<br><span class="mu">${esc(c.addr||'No address saved')} · ${esc(c.kw||'')} kW · ${esc(c.type||'')}</span>`;
+ $('docFields').innerHTML=DOC_FIELDS.map(([k,l])=>`<div><label>${esc(l)}</label><input id="df_${k}" value="${esc(vals[k]??'')}" ${['installDate','agreementDate'].includes(k)?'type="date"':'type="text"'}></div>`).join('');
+ $('docForm').style.display='block';$('docStatus').textContent='';
+}
+function docReset(){DOC_CURRENT=null;$('docSearch').value='';$('docSelected').textContent='Select a consumer to load their project details.';$('docForm').style.display='none'}
+function docVals(){const o={};DOC_FIELDS.forEach(([k])=>o[k]=$('df_'+k)?.value.trim()||'');return o}
+function docVendor(){const b=P.business||{};return {name:b.name||'EPC Vendor',owner:b.owner||b.sign||'Authorised Signatory',address:[b.addr,b.city].filter(Boolean).join(', '),phone:b.phone||'',email:b.email||'',gst:b.gst||'',sign:b.sign||b.owner||'Authorised Signatory'}}
+function loadJsPdf(){return new Promise((resolve,reject)=>{if(window.jspdf?.jsPDF)return resolve(window.jspdf.jsPDF);const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';sc.onload=()=>window.jspdf?.jsPDF?resolve(window.jspdf.jsPDF):reject(Error('PDF library did not load'));sc.onerror=()=>reject(Error('Could not load PDF generator. Check your internet connection.'));document.head.appendChild(sc)})}
+function pdfBase(title,sub=''){const d=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),w=d.internal.pageSize.getWidth();d.setFont('helvetica','bold');d.setFontSize(15);d.text(title,w/2,16,{align:'center'});if(sub){d.setFont('helvetica','normal');d.setFontSize(9);d.text(sub,w/2,22,{align:'center',maxWidth:w-25})}d.setDrawColor(100);d.line(12,27,w-12,27);return d}
+function pdfFooter(d){const n=d.internal.getNumberOfPages(),h=d.internal.pageSize.getHeight();for(let i=1;i<=n;i++){d.setPage(i);d.setFont('helvetica','normal');d.setFontSize(7);d.text('Generated by Solar Stack Powered By SRD Sons Technologies',12,h-7,{align:'left'});d.setFontSize(7);d.text(`Page ${i} of ${n}`,d.internal.pageSize.getWidth()-12,h-7,{align:'right'})}}
+function pdfText(d,text,x,y,width=180,size=9,lh=4.5){d.setFont('helvetica','normal');d.setFontSize(size);const lines=d.splitTextToSize(String(text??'—'),width);if(y+lines.length*lh>278){d.addPage();y=16}d.text(lines,x,y);return y+lines.length*lh}
+function pdfTable(d,rows,y=34){const left=14,w=182,lab=72,val=w-lab,rowH=7;let yy=y;rows.forEach(([a,b])=>{const al=d.splitTextToSize(String(a),lab-4),bl=d.splitTextToSize(String(b||'—'),val-4),h=Math.max(al.length,bl.length)*4.2+3;if(yy+h>278){d.addPage();yy=16}d.setDrawColor(160);d.rect(left,yy,lab,h);d.rect(left+lab,yy,val,h);d.setFont('helvetica','bold');d.setFontSize(8.5);d.text(al,left+2,yy+4);d.setFont('helvetica','normal');d.text(bl,left+lab+2,yy+4);yy+=h});return yy+4}
+function downloadDoc(d,name){pdfFooter(d);d.save(name.replace(/[^a-z0-9_-]+/gi,'_')+'.pdf')}
+function docSafeName(s){return String(s||'Consumer').replace(/[^a-z0-9_-]+/gi,'_')}
+function docEscape(s){return String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+async function generateOneEPCDoc(kind,format){
+ if(!DOC_CURRENT)return toast('Select a consumer first');
+ const buttons=[...document.querySelectorAll('#docForm button')];buttons.forEach(x=>x.disabled=true);
+ try{
+  const c=DOC_CURRENT,f=docVals(),b=docVendor(),safe=docSafeName(c.name);
+  if(format==='pdf'){
+   await loadJsPdf();
+   if(kind==='work')makeWorkCompletion(c,f,b);else if(kind==='annexure')makeAnnexureProforma(c,f,b);else makeAgreement(c,f,b);
+   $('docStatus').textContent='PDF generated: '+({work:'Work Completion Report',annexure:'Annexure-I / Proforma-A',agreement:'Model Agreement'}[kind])+'.';
+  }else{
+   downloadEPCWord(kind,c,f,b);
+   $('docStatus').textContent='Word file generated: '+({work:'Work Completion Report',annexure:'Annexure-I / Proforma-A',agreement:'Model Agreement'}[kind])+'.';
+  }
+ }catch(e){$('docStatus').textContent=e.message||'Document generation failed';toast(e.message||'Document generation failed')}
+ finally{buttons.forEach(x=>x.disabled=false)}
+}
+function downloadEPCWord(kind,c,f,b){
+ const title=kind==='work'?'Work Completion Report for Solar Power Plant':kind==='annexure'?'Renewable Energy Generating System — Annexure-I / Proforma-A':'Model Agreement';
+ let body='';
+ const table=(rows)=>'<table><thead><tr><th style="width:38%">'+(kind==='work'?'Sr.No / Component':'Particulars')+'</th><th>'+(kind==='work'?'Observation':'As Commissioned')+'</th></tr></thead><tbody>'+rows.map((r,i)=>'<tr><td>'+docEscape(r[0])+'</td><td>'+docEscape(r[1]||'')+'</td></tr>').join('')+'</tbody></table>';
+ if(kind==='work'){
+  const rows=[['Name',c.name],['Consumer number',f.consumerNo||f.consumerNumber],['Site/Location With Complete Address',f.address],['Category: Govt/Private Sector',f.category],['Sanction number',f.sanctionNo],['Sanctioned Capacity of solar PV system (KW)',f.sanctionKW+' kW'],['Installed Capacity of solar PV system (KW)',f.installedKW+' kW'],['Make of Module',f.moduleMake],['ALMM Model Number',f.almm],['Wattage per module',f.moduleWp+' Wp'],['No. of Module',f.moduleCount],['Total Capacity (KWP)',f.installedKW+' kW'],['Warranty Details (Product + Performance)',f.moduleWarranty],['Make & Model number of Inverter',[f.inverterMake,f.inverterModel].filter(Boolean).join(' / ')],['Inverter Rating',f.inverterRating],['Type of charge controller / MPPT',f.controller],['Capacity of Inverter',f.inverterKW+' kW'],['Year of manufacturing',f.manufactureYear],['AC Earthing',f.acEarth],['DC Earthing',f.dcEarth],['Lightning Arrester',f.arrester]];
+  body=table(rows)+'<p>It is certified that the earthing and system installation have been checked and the work has been completed.</p><p>Vendor: '+docEscape(b.name)+' | Authorised signatory: __________________ | Date: __________________</p>';
+ }else if(kind==='annexure'){
+  const rows=[['1. Name of the Consumer',c.name],['2. Consumer Number',f.consumerNo||f.consumerNumber],['3. Mobile Number',c.phone],['4. E-mail',f.email],['5. Address of Installation',f.address],['6. RE Arrangement Type',f.arrangement],['7. RE Source',f.source],['8. Sanctioned Capacity (KW)',f.sanctionKW],['9. Capacity Type',f.capacityType],['10. Project Model',f.model],['11. RE installed Capacity (Rooftop) (KW)',f.installedKW],['12. RE installed Capacity (Rooftop + Ground) (KW)',f.roofGroundKW],['13. RE installed Capacity (Ground) (KW)',f.groundKW],['14. Installation date',f.installDate],['Solar PV Details — Inverter Capacity (KW)',f.inverterKW],['Inverter Make / Model',[f.inverterMake,f.inverterModel].filter(Boolean).join(' / ')],['No. of PV Modules',f.moduleCount],['Module Capacity',f.moduleWp+' Wp']];
+  body=table(rows)+'<h2>Proforma-A</h2><h3>COMMISSIONING REPORT (PROVISIONAL) FOR GRID CONNECTED SOLAR PHOTOVOLTAIC POWER PLANT (with Net-metering facility)</h3><p>Certified that a Grid Connected SPV Power Plant of '+docEscape(f.installedKW||f.agreementKW)+' kWp capacity has been installed at '+docEscape(f.address)+' by M/S '+docEscape(b.name)+' on '+docEscape(f.installDate)+'. The system has been checked for its performance and found in order for further commissioning.</p><p>Signature of beneficiary: __________________ &nbsp;&nbsp; Signature of agency with name, seal and date: __________________</p><p>Signature of MSEDCL Officer / Name / Designation / Date / Seal: __________________</p>';
+ }else{
+  const clauses=[
+`This Agreement is made and executed on ${f.agreementDate} at ${f.consumerCity||'________________'} for design, supply, installation, testing, commissioning and maintenance of the rooftop solar system described below.`,
+`BETWEEN`,
+`${c.name}, residing at ${f.address}, electricity consumer number ${f.consumerNumber||f.consumerNo}, supplied by ${f.discom} at ${f.consumerCity} (hereinafter referred to as the “Applicant”, which expression shall include their lawful heirs, successors and permitted assigns);`,
+`AND`,
+`${b.name}, a registered/empanelled vendor, having its office at ${b.address}, phone ${b.phone}, email ${b.email} (hereinafter referred to as the “Vendor”, which expression shall include its lawful successors and permitted assigns). The Applicant and Vendor are together referred to as the “Parties”.`,
+`WHEREAS the Applicant wishes to install a rooftop solar system and the Vendor agrees to undertake the work subject to this Agreement, the accepted quotation/order and applicable laws and programme/DISCOM requirements.`,
+`1. SCOPE AND GENERAL TERMS. The Vendor shall supply, install, test and commission the rooftop solar system and balance-of-system equipment at the Applicant’s site. Any material change in scope, specification, price or schedule shall be agreed by both Parties in writing.`,
+`2. SYSTEM DETAILS. System capacity: ${f.agreementKW||f.installedKW||c.kw} kW. Module make: ${f.moduleMake}; module rating: ${f.moduleWp} Wp; number of modules: ${f.moduleCount}. Inverter make/model: ${f.inverterMake} ${f.inverterModel}; inverter capacity: ${f.inverterKW} kW. Equipment shall comply with applicable technical, safety and programme requirements.`,
+`3. CONTRACT PRICE AND PAYMENT. Total system price: ₹${f.systemCost||c.cost||'________________'}. Payment terms: ${f.paymentTerms}. Any additional amount or variation must be agreed in writing. Payments shall be made through traceable banking or online channels against acknowledgement/receipt.`,
+`4. APPLICANT’S RESPONSIBILITIES. The Applicant shall provide correct consumer, site and load details; safe and reasonable site access; necessary permissions and third-party consents; and suitable, shadow-free installation space. The Applicant shall operate the system in accordance with supplier instructions and keep the installation reasonably accessible and maintained.`,
+`5. INSTALLATION, TESTING AND COMMISSIONING. The Vendor shall carry out installation and testing in accordance with applicable standards and shall provide available commissioning and handover records to the Applicant. The actual completion/commissioning date shall be recorded in the relevant completion documents.`,
+`6. MAINTENANCE AND ACCESS. The Vendor shall provide the agreed maintenance service for five years from commissioning, including workmanship-related support and periodic inspection as agreed. Routine cleaning and day-to-day care remain the Applicant’s responsibility. The Applicant shall allow reasonable access for inspection, repair and maintenance with prior coordination, except in an emergency.`,
+`7. WARRANTIES. Product warranties are subject to the respective manufacturers’ written warranty terms. Workmanship and balance-of-system warranty coverage shall be as stated in the accepted quotation/order and applicable programme requirements. Warranty exclusions and claim procedures shall be supplied to the Applicant in writing; no warranty term in this Agreement overrides mandatory law.`,
+`8. PERFORMANCE AND ESTIMATES. Any generation or savings estimate is an estimate only and may vary with weather, shading, usage, grid availability, maintenance and other site conditions. Any express performance commitment must be stated in a written annexure signed by both Parties.`,
+`9. INSURANCE AND RISK. Responsibility for transit, installation and post-handover risk shall be as agreed in the accepted order and applicable law. The Applicant may arrange insurance for the installed system after handover.`,
+`10. CANCELLATION AND REFUNDS. Cancellation, deductions and refunds shall be governed by the accepted quotation/order, amounts actually incurred and applicable law. No unstated penalty shall apply unless separately agreed in writing by both Parties.`,
+`11. LIABILITY AND INDEMNITY. Each Party shall be responsible for its own acts, omissions and breaches in accordance with applicable law. Nothing in this Agreement excludes liability that cannot lawfully be excluded.`,
+`12. SUSPENSION AND TERMINATION. A material breach shall be notified in writing and, where capable of remedy, the defaulting Party shall be given a reasonable opportunity to remedy it. Either Party may terminate where permitted by the accepted order or applicable law, without affecting accrued rights.`,
+`13. NOTICES. Notices under this Agreement shall be in writing and delivered by hand, registered post/courier or email to the addresses/contact details recorded above, or to updated details notified in writing.`,
+`14. FORCE MAJEURE. Neither Party shall be liable for delay caused by events beyond reasonable control, subject to prompt notice and reasonable steps to mitigate the effects. Amounts already due for completed work or supplied equipment remain payable as required by the order and applicable law.`,
+`15. GOVERNING LAW AND DISPUTES. This Agreement shall be governed by the laws of India. The Parties shall first attempt to resolve disputes amicably. If unresolved, either Party may pursue the remedies available under applicable law before a competent forum.`,
+`16. ENTIRE AGREEMENT. This Agreement, together with the accepted quotation/order and any annexures signed by both Parties, records their understanding for this project. If there is a conflict, the Parties shall resolve it in writing subject to applicable law. Any amendment must be signed or otherwise acknowledged in writing by both Parties.`,
+`IN WITNESS WHEREOF, the Parties have read and understood this Agreement and have signed it voluntarily on the date stated above. Each Party shall retain a signed copy.`
+  ];
+  body='<div class="stamp-space"></div><div class="agreement-title">MODEL AGREEMENT</div>'+clauses.map((x,i)=>`<p class="${/^\d+\./.test(x)?'clause':''}">${docEscape(x)}</p>`).join('')+
+  `<div class="signatures"><table class="signgrid"><tr><td><b>APPLICANT</b><br>Name: ${docEscape(c.name)}<br>Consumer No.: ${docEscape(f.consumerNumber||f.consumerNo)}<br>Signature: __________________________<br>Date: __________________</td><td><b>VENDOR</b><br>Name: ${docEscape(b.name)}<br>Authorised Signatory: ${docEscape(b.sign||b.owner||'')}<br>Signature with seal: __________________________<br>Date: __________________</td></tr></table></div><div class="witnesses"><b>WITNESSES</b><br>1. Name: ______________________________ Address: __________________________________<br>Signature: ___________________________<br><br>2. Name: ______________________________ Address: __________________________________<br>Signature: ___________________________</div>`;
+ }
+ const isAgreement=kind==='agreement';
+ const html=`<!doctype html><html><head><meta charset="utf-8"><style>@page{size:A4;margin:20mm 22mm 20mm 22mm}body{font-family:"Times New Roman",serif;font-size:11pt;color:#111;padding-bottom:10mm}.doc-brand-corner{position:fixed;left:0;bottom:0;font-family:Arial,sans-serif;font-size:7pt;font-weight:normal;text-align:left;color:#333;white-space:nowrap}h1{text-align:center;font-size:16pt;margin:0 0 8pt}h2,h3{text-align:center}table{border-collapse:collapse;width:100%;margin:10pt 0}th,td{border:1px solid #555;padding:5pt;vertical-align:top}th{text-align:center;font-weight:bold}p{line-height:1.3;margin:7pt 0;text-align:justify}.brand{text-align:center;font-size:9pt;margin-bottom:10pt}.stamp-space{height:32mm}.agreement-title{text-align:center;font-weight:bold;font-size:14pt;text-decoration:underline;margin:0 0 12pt}.parties{text-align:justify;margin:8pt 0}.clause{font-weight:bold}.signatures{margin-top:24pt;page-break-inside:avoid}.signgrid{width:100%;border-collapse:collapse;margin-top:20pt}.signgrid td{border:0;width:50%;padding:8pt 4pt;vertical-align:top}.witnesses{margin-top:18pt;page-break-inside:avoid}</style></head><body><div class="doc-brand-corner">Generated by Solar Stack Powered By SRD Sons Technologies</div>${isAgreement?'':`<h1>${docEscape(title)}</h1><div class="brand">${docEscape(b.name)}${b.address?' · '+docEscape(b.address):''}</div>`}${body}</body></html>`;
+ const blob=new Blob(['\ufeff',html],{type:'application/msword'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=docSafeName(title)+'_'+docSafeName(c.name)+'.doc';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+}
+async function generateEPCDocs(){
+ if(!DOC_CURRENT)return toast('Select a consumer first');
+ const btn=document.querySelector('#docForm button.btn');btn.disabled=true;btn.textContent='Generating PDFs…';
+ try{await loadJsPdf();const c=DOC_CURRENT,vv=docVals(),b=docVendor(),safe=(c.name||'Consumer').replace(/[^a-z0-9_-]+/gi,'_');
+ makeWorkCompletion(c,vv,b);makeAnnexureProforma(c,vv,b);makeAgreement(c,vv,b);
+ $('docStatus').textContent='Generated: Work Completion Report, Annexure-I / Proforma-A, and Model Agreement. Your browser should download each PDF.';
+ toast('3 PDFs generated');
+ }catch(e){$('docStatus').textContent=e.message||'PDF generation failed';toast(e.message||'PDF generation failed')}
+ finally{btn.disabled=false;btn.textContent='Generate 3 PDFs'}
+}
+function makeWorkCompletion(c,f,b){
+ const d=pdfBase('Work Completion Report for Solar Power Plant',b.name+' · '+b.address),rows=[
+ ['Name',c.name],['Consumer number',f.consumerNo||f.consumerNumber],['Site/Location With Complete Address',f.address],['Category: Govt/Private Sector',f.category],['Sanction number',f.sanctionNo],
+ ['Sanctioned Capacity of solar PV system (kW)',f.sanctionKW+' kW'],['Installed Capacity of solar PV system (kW)',f.installedKW+' kW'],
+ ['Make of Module',f.moduleMake],['ALMM Model Number',f.almm],['Wattage per module',f.moduleWp+' Wp'],['No. of Module',f.moduleCount],['Total Capacity (kWp)',f.installedKW+' kW'],['Warranty Details (Product + Performance)',f.moduleWarranty],
+ ['Make & Model number of Inverter',[f.inverterMake,f.inverterModel].filter(Boolean).join(' / ')],['Rating',f.inverterRating],['Type of charge controller / MPPT',f.controller],['Capacity of Inverter',f.inverterKW+' kW'],['Year of manufacturing',f.manufactureYear],
+ ['AC Earthing',f.acEarth],['DC Earthing',f.dcEarth],['Lightning Arrester',f.arrester]];
+ let y=pdfTable(d,rows);
+ y=pdfText(d,`It is certified that the Earth Resistance measured in presence of Licensed Electrical Contractor/Supervisor is found in order, i.e. < 5 Ohms as per MNRE OM dated 07.06.24 for CFA Component.`,14,y,182,9,4.5)+4;
+ y=pdfText(d,`We ${b.name} [Vendor] and ${c.name} [Consumer], bearing Consumer Number ${f.consumerNo||f.consumerNumber}, confirm structural stability of the installed solar power plant and that requisite permissions from the concerned authority have been obtained. MSEDCL will not be held responsible for loss to property or human life due to collapse or damage to the installed solar power plant.`,14,y,182,9,4.5)+4;
+ y=pdfText(d,`The installed Solar PV System is working properly with electrical safety and islanding switch. Where a backup inverter is present, its supply must never be synchronized with the solar inverter to avoid electrical accidents due to back-feeding. The Vendor is responsible for non-working of the islanding mechanism and back-feed to the de-energized grid.`,14,y,182,9,4.5)+10;
+ y=pdfText(d,`Signature [Vendor]                                      Signature [Consumer]`,14,y,182,10,5)+12;
+ y=pdfText(d,`Guarantee Certificate Undertaking to be submitted by VENDOR`,14,y,182,10,5)+3;
+ pdfText(d,`The undersigned will provide services to the consumer for repairs/maintenance of the RTS plant free of cost for 5 years of the comprehensive Maintenance Contract (CMC) period from the date of commissioning. Non-performing/under-performing system components will be replaced/repaired free of cost during the CMC period.`,14,y,182,9,4.5);
+ downloadDoc(d,`Work_Completion_Report_${c.name}`);
+}
+function makeAnnexureProforma(c,f,b){
+ const d=pdfBase('Renewable Energy Generating System','Annexure-I · Commissioning Report for RE System');
+ let y=pdfTable(d,[['S. No. / Particulars','As Commissioned'],['1. Name of the Consumer',c.name],['2. Consumer Number',f.consumerNo||f.consumerNumber],['3. Mobile Number',c.phone],['4. E-mail',f.email],['5. Address of Installation',f.address],['6. RE Arrangement Type',f.arrangement],['7. RE Source',f.source],['8. Sanctioned Capacity (kW)',f.sanctionKW],['9. Capacity Type',f.capacityType],['10. Project Model',f.model],['11. RE installed Capacity (Rooftop) (kW)',f.installedKW],['12. RE installed Capacity (Rooftop + Ground) (kW)',f.roofGroundKW],['13. RE installed Capacity (Ground) (kW)',f.groundKW],['14. Installation date',f.installDate],['Solar PV Details — Inverter Capacity (kW)',f.inverterKW],['Inverter Make',[f.inverterMake,f.inverterModel].filter(Boolean).join(' / ')],['No. of PV Modules',f.moduleCount],['Module Capacity',f.moduleWp+' Wp']]);
+ y=pdfText(d,'Proforma-A',14,y+2,182,12,5)+4;
+ y=pdfText(d,'COMMISSIONING REPORT (PROVISIONAL) FOR GRID CONNECTED SOLAR PHOTOVOLTAIC POWER PLANT (with Net-metering facility)',14,y,182,10,5)+4;
+ y=pdfText(d,`Certified that a Grid Connected SPV Power Plant of ${f.installedKW||f.agreementKW} kWp capacity has been installed at ${f.address} of Maharashtra, installed by M/S ${b.name} on ${f.installDate}. The system is as per BIS/MNRE specifications. The system has been checked for its performance and found in order for further commissioning.`,14,y,182,9,4.5)+14;
+ y=pdfText(d,'Signature of the beneficiary                                      Signature of the agency with name, seal and date',14,y,182,9,4.5)+12;
+ y=pdfText(d,'The above RTS installation has been inspected for Pre-Commissioning Testing of Roof Top Solar Connection as per applicable guidelines and found in order for commissioning.',14,y,182,9,4.5)+14;
+ pdfText(d,'Signature of the MSEDCL Officer · Name · Designation · Date and seal',14,y,182,9,4.5);
+ downloadDoc(d,`Annexure_I_Proforma_A_${c.name}`);
+}
+function makeAgreement(c,f,b){
+ // Stamp-paper-oriented layout: leave a clear top area on page one for the stamp/e-stamp imprint.
+ const d=new window.jspdf.jsPDF({unit:'mm',format:'a4'}), pageW=d.internal.pageSize.getWidth(), pageH=d.internal.pageSize.getHeight();
+ const left=22,right=22,width=pageW-left-right;
+ let y=48; // intentionally reserved blank area above agreement heading on first page
+ d.setFont('times','bold');d.setFontSize(14);d.text('MODEL AGREEMENT',pageW/2,y,{align:'center'});y+=7;
+ d.setFont('times','normal');d.setFontSize(9.5);
+ const write=(txt,opts={})=>{
+   const size=opts.size||9.5, leading=opts.leading||4.6, gap=opts.gap===undefined?3:opts.gap;
+   d.setFont('times',opts.bold?'bold':'normal');d.setFontSize(size);
+   const lines=d.splitTextToSize(String(txt??''),width);
+   const needed=lines.length*leading+gap;
+   if(y+needed>pageH-23){d.addPage();y=22;}
+   d.text(lines,left,y,{align:opts.align||'justify',lineHeightFactor:1.15,maxWidth:width});
+   y+=lines.length*leading+gap;
+ };
+ write(`This Agreement is made and executed on ${f.agreementDate} at ${f.consumerCity||'________________'} for design, supply, installation, testing, commissioning and maintenance of the rooftop solar system described below.`,{gap:4});
+ write('BETWEEN',{bold:true,align:'left',gap:1});
+ write(`${c.name}, residing at ${f.address}, electricity consumer number ${f.consumerNumber||f.consumerNo}, supplied by ${f.discom} at ${f.consumerCity} (hereinafter referred to as the “Applicant”, which expression shall include their lawful heirs, successors and permitted assigns);`,{gap:3});
+ write('AND',{bold:true,align:'left',gap:1});
+ write(`${b.name}, a registered/empanelled vendor, having its office at ${b.address}, phone ${b.phone}, email ${b.email} (hereinafter referred to as the “Vendor”, which expression shall include its lawful successors and permitted assigns). The Applicant and Vendor are together referred to as the “Parties”.`,{gap:3});
+ const clauses=[
+`WHEREAS the Applicant wishes to install a rooftop solar system and the Vendor agrees to undertake the work subject to this Agreement, the accepted quotation/order and applicable laws and programme/DISCOM requirements.`,
+`1. SCOPE AND GENERAL TERMS. The Vendor shall supply, install, test and commission the rooftop solar system and balance-of-system equipment at the Applicant’s site. Any material change in scope, specification, price or schedule shall be agreed by both Parties in writing.`,
+`2. SYSTEM DETAILS. System capacity: ${f.agreementKW||f.installedKW||c.kw} kW. Module make: ${f.moduleMake}; module rating: ${f.moduleWp} Wp; number of modules: ${f.moduleCount}. Inverter make/model: ${f.inverterMake} ${f.inverterModel}; inverter capacity: ${f.inverterKW} kW. Equipment shall comply with applicable technical, safety and programme requirements.`,
+`3. CONTRACT PRICE AND PAYMENT. Total system price: Rs. ${f.systemCost||c.cost||'________________'}. Payment terms: ${f.paymentTerms}. Any additional amount or variation must be agreed in writing. Payments shall be made through traceable banking or online channels against acknowledgement/receipt.`,
+`4. APPLICANT’S RESPONSIBILITIES. The Applicant shall provide correct consumer, site and load details; safe and reasonable site access; necessary permissions and third-party consents; and suitable, shadow-free installation space. The Applicant shall operate the system in accordance with supplier instructions and keep the installation reasonably accessible and maintained.`,
+`5. INSTALLATION, TESTING AND COMMISSIONING. The Vendor shall carry out installation and testing in accordance with applicable standards and shall provide available commissioning and handover records to the Applicant. The actual completion/commissioning date shall be recorded in the relevant completion documents.`,
+`6. MAINTENANCE AND ACCESS. The Vendor shall provide the agreed maintenance service for five years from commissioning, including workmanship-related support and periodic inspection as agreed. Routine cleaning and day-to-day care remain the Applicant’s responsibility. The Applicant shall allow reasonable access for inspection, repair and maintenance with prior coordination, except in an emergency.`,
+`7. WARRANTIES. Product warranties are subject to the respective manufacturers’ written warranty terms. Workmanship and balance-of-system warranty coverage shall be as stated in the accepted quotation/order and applicable programme requirements. Warranty exclusions and claim procedures shall be supplied to the Applicant in writing; no warranty term in this Agreement overrides mandatory law.`,
+`8. PERFORMANCE AND ESTIMATES. Any generation or savings estimate is an estimate only and may vary with weather, shading, usage, grid availability, maintenance and other site conditions. Any express performance commitment must be stated in a written annexure signed by both Parties.`,
+`9. INSURANCE AND RISK. Responsibility for transit, installation and post-handover risk shall be as agreed in the accepted order and applicable law. The Applicant may arrange insurance for the installed system after handover.`,
+`10. CANCELLATION AND REFUNDS. Cancellation, deductions and refunds shall be governed by the accepted quotation/order, amounts actually incurred and applicable law. No unstated penalty shall apply unless separately agreed in writing by both Parties.`,
+`11. LIABILITY AND INDEMNITY. Each Party shall be responsible for its own acts, omissions and breaches in accordance with applicable law. Nothing in this Agreement excludes liability that cannot lawfully be excluded.`,
+`12. SUSPENSION AND TERMINATION. A material breach shall be notified in writing and, where capable of remedy, the defaulting Party shall be given a reasonable opportunity to remedy it. Either Party may terminate where permitted by the accepted order or applicable law, without affecting accrued rights.`,
+`13. NOTICES. Notices under this Agreement shall be in writing and delivered by hand, registered post/courier or email to the addresses/contact details recorded above, or to updated details notified in writing.`,
+`14. FORCE MAJEURE. Neither Party shall be liable for delay caused by events beyond reasonable control, subject to prompt notice and reasonable steps to mitigate the effects. Amounts already due for completed work or supplied equipment remain payable as required by the order and applicable law.`,
+`15. GOVERNING LAW AND DISPUTES. This Agreement shall be governed by the laws of India. The Parties shall first attempt to resolve disputes amicably. If unresolved, either Party may pursue the remedies available under applicable law before a competent forum.`,
+`16. ENTIRE AGREEMENT. This Agreement, together with the accepted quotation/order and any annexures signed by both Parties, records their understanding for this project. If there is a conflict, the Parties shall resolve it in writing subject to applicable law. Any amendment must be signed or otherwise acknowledged in writing by both Parties.`,
+`IN WITNESS WHEREOF, the Parties have read and understood this Agreement and have signed it voluntarily on the date stated above. Each Party shall retain a signed copy.`
+ ];
+ clauses.forEach(x=>write(x,{bold:/^\d+\./.test(x),gap:3}));
+ if(y+56>pageH-18){d.addPage();y=22;}else y+=5;
+ d.setFont('times','bold');d.setFontSize(10);d.text('APPLICANT',left,y);d.text('VENDOR',left+width/2+4,y);y+=6;
+ d.setFont('times','normal');d.setFontSize(9);
+ const leftLines=[`Name: ${c.name}`,`Consumer No.: ${f.consumerNumber||f.consumerNo}`,`Signature: __________________________`,`Date: __________________`];
+ const rightLines=[`Name: ${b.name}`,`Authorised signatory: ${b.sign||b.owner||''}`,`Signature with seal: __________________`,`Date: __________________`];
+ for(let i=0;i<leftLines.length;i++){d.text(leftLines[i],left,y);d.text(rightLines[i],left+width/2+4,y);y+=5;}
+ y+=9;d.setFont('times','bold');d.text('WITNESSES',left,y);y+=6;d.setFont('times','normal');
+ d.text('1. Name: ______________________________  Address: __________________________________',left,y);y+=6;d.text('   Signature: ___________________________',left,y);y+=8;
+ d.text('2. Name: ______________________________  Address: __________________________________',left,y);y+=6;d.text('   Signature: ___________________________',left,y);
+ downloadDoc(d,`Model_Agreement_${c.name}`);
+}
 </script></body></html>
